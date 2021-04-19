@@ -15,6 +15,14 @@ store NavItems {
       target = "",
       href = "/charter")
 
+  const CONTRIBUTORS =
+    Ui.NavItem::Link(
+      iconBefore = Ui.Icons:TAG,
+      iconAfter = <></>,
+      label = "Contributions",
+      target = "",
+      href = "/contributors")
+
   const DISCORD =
     Ui.NavItem::Link(
       iconBefore = @svg(../../assets/svg/discord-icon.svg),

@@ -7,7 +7,12 @@ routes {
     Application.setPage(Page::GuildCharter)
   }
 
-  /contributions {
-    Application.setPage(Page::Contributions.Index)
+  /contributors {
+    Application.setPage(Page::Contributors.Index)
   }
+
+  /contributors/:id (id : Number) {
+    Application.setPage(Page::Contributors.Show)
+  }
+
 }

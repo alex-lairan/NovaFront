@@ -29,10 +29,21 @@ component Header {
     }
   }
 
+  get admin : Ui.NavItem {
+    Ui.NavItem::Group(
+      iconBefore = Ui.Icons:LOCK,
+      iconAfter = <></>,
+      label = "Admin",
+
+      items = [NavItems:CONTRIBUTORS]
+    )
+  }
+
   fun render : Html {
     <Ui.Header
       gap={Ui.Size::Em(1.5)}
       items=[
+        admin,
         Ui.NavItem::Divider,
         darkModeToggle
       ]

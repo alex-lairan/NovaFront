@@ -6,7 +6,7 @@ record Aggregate.ContributorsSummary {
   daysLeft : Time using "days_left"
 }
 
-component Pages.Contributions.Index {
+component Pages.Contributors.Index {
   fun contributors : Array(Aggregate.ContributorsSummary) {
     [
       {
@@ -68,9 +68,6 @@ component Pages.Contributions.Index {
         Ui.Cell::Number(contributor.amount),
         Ui.Cell::HtmlItems([<Ui.RelativeTime date={contributor.daysLeft}/>]),
         Ui.Cell::HtmlItems([
-          <Ui.FloatingButton
-            size={Ui.Size::Px(24)}
-            icon={Ui.Icons:EYE}/>
         ])
       ]
     }

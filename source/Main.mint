@@ -12,7 +12,8 @@ component Main {
       Page::Initial => <{  }>
       Page::Home => <></>
       Page::GuildCharter => <Pages.GuildCharter/>
-      Page::Contributions.Index => <Pages.Contributions.Index/>
+      Page::Contributors.Index => <Pages.Contributors.Index/>
+      Page::Contributors.Show => <Pages.Contributors.Index/>
       Page::NotFound => <></>
     }
   }

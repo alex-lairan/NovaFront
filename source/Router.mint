@@ -1,18 +1,35 @@
 routes {
   / {
-    Application.setPage(Page::Home)
+    Application.initializeWithPage(Page::Home)
   }
 
   /charter {
-    Application.setPage(Page::GuildCharter)
+    Application.initializeWithPage(Page::GuildCharter)
   }
 
   /contributors {
-    Application.setPage(Page::Contributors.Index)
+    sequence {
+      Application.initialize()
+
+      case (Application.user) {
+        UserStatus::LoggedOut =>
+          Application.setPage(Page::NotFound)
+        UserStatus::LoggedIn user =>
+          Application.setPage(Page::Contributors.Index)
+      }
+    }
   }
 
   /contributors/:id (id : Number) {
-    Application.setPage(Page::Contributors.Show)
-  }
+    sequence {
+      Application.initialize()
 
+      case (Application.user) {
+        UserStatus::LoggedOut =>
+          Application.setPage(Page::NotFound)
+        UserStatus::LoggedIn user =>
+          Application.setPage(Page::Contributors.Show)
+      }
+    }
+  }
 }

@@ -23,6 +23,20 @@ store NavItems {
       target = "",
       href = "/contributors")
 
+  const LOGOUT =
+    Ui.NavItem::Item(
+      iconBefore = Ui.Icons:BROADCAST,
+      iconAfter = <></>,
+      label = "Deconnection",
+      action =
+        (event : Html.Event) {
+          sequence {
+            Ui.Notifications.notifyDefault(<{ "Au revoir ! 👋" }>)
+            Application.logout()
+          }
+        }
+    )
+
   const DISCORD =
     Ui.NavItem::Link(
       iconBefore = @svg(../../assets/svg/discord-icon.svg),

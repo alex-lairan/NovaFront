@@ -10,11 +10,11 @@ component Main {
   get content : Html {
     case (page) {
       Page::Initial => <{  }>
-      Page::Home => <></>
+      Page::Home => <Pages.Home />
       Page::GuildCharter => <Pages.GuildCharter/>
       Page::Contributors.Index => <Pages.Contributors.Index/>
-      Page::Contributors.Show => <Pages.Contributors.Index/>
-      Page::NotFound => <></>
+      Page::Contributors.Show => <Pages.Contributors.Show/>
+      Page::NotFound => <Pages.NotFound />
     }
   }
 

@@ -68,6 +68,10 @@ component Pages.Contributors.Index {
         Ui.Cell::Number(contributor.amount),
         Ui.Cell::HtmlItems([<Ui.RelativeTime date={contributor.daysLeft}/>]),
         Ui.Cell::HtmlItems([
+          <Ui.FloatingButton
+            size={Ui.Size::Px(24)}
+            icon={Ui.Icons:EYE}
+            onClick={((event : Html.Event) : Promise(Never, Void) { Window.navigate("/contributors/#{contributor.id}") })}/>
         ])
       ]
     }
@@ -110,7 +114,8 @@ component Pages.Contributors.Index {
             shrink = true
           }
         ]
-        rows={tableContributors()}/>
+        rows={tableContributors()}
+        />
     </div>
   }
 }

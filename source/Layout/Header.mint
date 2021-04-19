@@ -1,5 +1,6 @@
 component Header {
   connect Ui exposing { mobile, darkMode, toggleDarkMode }
+  connect Application exposing { user }
 
   get darkModeToggle : Ui.NavItem {
     if (mobile) {
@@ -29,6 +30,18 @@ component Header {
     }
   }
 
+  get items : Array(Ui.NavItem) {
+    case (user) {
+      UserStatus::LoggedOut => [darkModeToggle]
+      UserStatus::LoggedIn user =>
+        if (user.isAdmin) {
+          [admin, Ui.NavItem::Divider, NavItems:LOGOUT, Ui.NavItem::Divider, darkModeToggle]
+        } else {
+          [Ui.NavItem::Divider, NavItems:LOGOUT, darkModeToggle]
+        }
+    }
+  }
+
   get admin : Ui.NavItem {
     Ui.NavItem::Group(
       iconBefore = Ui.Icons:LOCK,
@@ -42,27 +55,24 @@ component Header {
   fun render : Html {
     <Ui.Header
       gap={Ui.Size::Em(1.5)}
-      items=[
-        admin,
-        Ui.NavItem::Divider,
-        darkModeToggle
-      ]
+      items={items}
       brand={<Logo/>}/>
   }
 }
 
 component Logo {
   property size : Ui.Size = Ui.Size::Inherit
-  property href : String = ""
+  property href : String = "/"
 
   style base {
+    cursor: pointer;
     svg {
       color: var(--primary-color);
     }
   }
 
   fun render : Html {
-    <div::base>
+    <div::base onClick={((event : Html.Event) { Window.navigate("/") })}>
       <Ui.Brand
         icon={Ui.Icons:SUN}
         name="Supernøva"

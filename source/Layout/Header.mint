@@ -36,9 +36,7 @@ component Header {
         Ui.NavItem::Divider,
         darkModeToggle
       ]
-      brand={<Logo />}
-    >
-    </Ui.Header>
+      brand={<Logo/>}/>
   }
 }
 

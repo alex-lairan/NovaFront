@@ -4,5 +4,7 @@ enum Page {
 
   GuildCharter
 
+  Contributions.Index
+
   NotFound
 }

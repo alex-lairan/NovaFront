@@ -1,9 +1,9 @@
 component Pages.GuildCharter {
-  state chartTab = "guild_engagement"
+  state chartTab = "new_crewmate"
 
-  fun content(item : Html) : Html {
+  fun content (item : Html) : Html {
     <Ui.Content textAlign="left">
-      <{item}>
+      <{ item }>
     </Ui.Content>
   }
 
@@ -152,76 +152,97 @@ component Pages.GuildCharter {
 
   get guildEngagement : Html {
     <>
-    <Ui.Container
-      orientation="horizontal"
-      gap={Ui.Size::Px(20)}
-      justify="space-evenly"
-      align="top"
-    >
-      <Ui.Card minWidth={Ui.Size::Px(200)}>
-        <Ui.Icon icon={Ui.Icons:MOON} size={Ui.Size::Px(30)} />
-        <Ui.Card.Container
-          subtitle=<{ "respect de chacun, tolérance 0 aux dramas / insultes de tous types" }>
-          title=<{ "Sérénité de ses membres" }>
-          />
-      </Ui.Card>
+      <Ui.Container
+        orientation="horizontal"
+        gap={Ui.Size::Px(20)}
+        justify="space-evenly"
+        align="top">
 
-      <Ui.Card minWidth={Ui.Size::Px(200)}>
-        <Ui.Icon icon={Ui.Icons:LINK} size={Ui.Size::Px(30)} />
-        <Ui.Card.Container
-          subtitle=<{ "vous trouverez toujours quelqu’un à qui parler si vous en ressentez le besoin" }>
-          title=<{ "Disponibilité pour ses membres" }>
-          />
-      </Ui.Card>
+        <Ui.Card minWidth={Ui.Size::Px(200)}>
+          <Ui.Card.Container
+            subtitle=<{ "respect de chacun, tolérance 0 aux dramas / insultes de tous types" }>
+            title=<{ "Sérénité de ses membres" }>
+            image={
+              <Ui.Icon
+                icon={Ui.Icons:MOON}
+                size={Ui.Size::Px(30)}/>
+            }/>
+        </Ui.Card>
 
-      <Ui.Card minWidth={Ui.Size::Px(200)}>
-        <Ui.Icon icon={Ui.Icons:BROADCAST} size={Ui.Size::Px(30)} />
-        <Ui.Card.Container
-          subtitle=<{ "" }>
-          title=<{ "Favoriser ses membres aux détriments des pickups" }>
-          />
-      </Ui.Card>
+        <Ui.Card minWidth={Ui.Size::Px(200)}>
+          <Ui.Card.Container
+            subtitle=<{ "vous trouverez toujours quelqu’un à qui parler si vous en ressentez le besoin" }>
+            title=<{ "Disponibilité pour ses membres" }>
+            image={
+              <Ui.Icon
+                icon={Ui.Icons:LINK}
+                size={Ui.Size::Px(30)}/>
+            }/>
+        </Ui.Card>
 
-      <Ui.Card minWidth={Ui.Size::Px(200)}>
-        <Ui.Icon icon={Ui.Icons:BRIEFCASE} size={Ui.Size::Px(30)} />
-        <Ui.Card.Container
-          subtitle=<{ "Maîtrise de l’event, strat préparée en amont, placement, attrib etc" }>
-          title=<{ "Fournir un encadrement sérieux pour les raids" }>
-          />
-      </Ui.Card>
-    </Ui.Container>
+        <Ui.Card minWidth={Ui.Size::Px(200)}>
+          <Ui.Card.Container
+            subtitle=<{ "" }>
+            title=<{ "Favoriser ses membres aux détriments des pickups" }>
+            image={
+              <Ui.Icon
+                icon={Ui.Icons:BROADCAST}
+                size={Ui.Size::Px(30)}/>
+            }/>
+        </Ui.Card>
 
-    <Ui.Container
-      orientation="horizontal"
-      gap={Ui.Size::Px(20)}
-      justify="space-evenly"
-      align="top"
-    >
-      <Ui.Card minWidth={Ui.Size::Px(200)}>
-        <Ui.Icon icon={Ui.Icons:RUBY} size={Ui.Size::Px(30)} />
-        <Ui.Card.Container
-          subtitle=<{ "N'allez pas payer vos compo venez voir vos officiers pour ça" }>
-          title=<{ "OFFRIR VOS ENCHANTEMENTS & GEMMES PVE" }>
-          />
-      </Ui.Card>
+        <Ui.Card minWidth={Ui.Size::Px(200)}>
+          <Ui.Card.Container
+            subtitle=<{ "Maîtrise de l’event, strat préparée en amont, placement, attrib etc" }>
+            title=<{ "Fournir un encadrement sérieux pour les raids" }>
+            image={
+              <Ui.Icon
+                icon={Ui.Icons:BRIEFCASE}
+                size={Ui.Size::Px(30)}/>
+            }/>
+        </Ui.Card>
 
-      <Ui.Card minWidth={Ui.Size::Px(200)}>
-        <Ui.Icon icon={Ui.Icons:WATCH} size={Ui.Size::Px(30)} />
-        <Ui.Card.Container
-          title=<{ "Des discounts sur certains objets farm par la guilde vendu à l'hv" }>
-          />
-      </Ui.Card>
+      </Ui.Container>
 
-      <Ui.Card minWidth={Ui.Size::Px(200)}>
-        <Ui.Icon icon={Ui.Icons:GIFT} size={Ui.Size::Px(30)} />
-        <Ui.Card.Container
-          subtitle=<{ "CERTAINS consommables de raid fournis, stuff résistance, somme allouée aux réparations" }>
-          title=<{ "Des avantages spécifiques " }>
-          />
-      </Ui.Card>
+      <Ui.Container
+        orientation="horizontal"
+        gap={Ui.Size::Px(20)}
+        justify="space-evenly"
+        align="top">
 
-    </Ui.Container>
+        <Ui.Card minWidth={Ui.Size::Px(200)}>
+          <Ui.Card.Container
+            subtitle=<{ "N'allez pas payer vos compo venez voir vos officiers pour ça" }>
+            title=<{ "OFFRIR VOS ENCHANTEMENTS & GEMMES PVE" }>
+            image={
+              <Ui.Icon
+                icon={Ui.Icons:RUBY}
+                size={Ui.Size::Px(30)}/>
+            }/>
+        </Ui.Card>
 
+        <Ui.Card minWidth={Ui.Size::Px(200)}>
+          <Ui.Card.Container
+            title=<{ "Des discounts sur certains objets farm par la guilde vendu à l'hv" }>
+            image={
+              <Ui.Icon
+                icon={Ui.Icons:WATCH}
+                size={Ui.Size::Px(30)}/>
+            }/>
+        </Ui.Card>
+
+        <Ui.Card minWidth={Ui.Size::Px(200)}>
+          <Ui.Card.Container
+            subtitle=<{ "CERTAINS consommables de raid fournis, stuff résistance, somme allouée aux réparations" }>
+            title=<{ "Des avantages spécifiques " }>
+            image={
+              <Ui.Icon
+                icon={Ui.Icons:GIFT}
+                size={Ui.Size::Px(30)}/>
+            }/>
+        </Ui.Card>
+
+      </Ui.Container>
     </>
   }
 
@@ -231,29 +252,40 @@ component Pages.GuildCharter {
       gap={Ui.Size::Px(20)}
       justify="space-evenly"
       align="center">
+
       <Ui.Card minWidth={Ui.Size::Px(200)}>
-        <Ui.Icon icon={Ui.Icons:CLOCK} size={Ui.Size::Px(30)} />
         <Ui.Card.Container
           subtitle=<{ "Mercredi et Jeudi de 20h45 à 00h" }>
           title=<{ "2 Soir de raid par semaine" }>
-          />
+          image={
+            <Ui.Icon
+              icon={Ui.Icons:CLOCK}
+              size={Ui.Size::Px(30)}/>
+          }/>
       </Ui.Card>
 
       <Ui.Card minWidth={Ui.Size::Px(200)}>
-        <Ui.Icon icon={Ui.Icons:SQUIRREL} size={Ui.Size::Px(30)} />
         <Ui.Card.Container
           subtitle=<{ "Payable mensuellement" }>
           title=<{ "Cotisation de 25po hebdomaraire" }>
-          />
+          image={
+            <Ui.Icon
+              icon={Ui.Icons:SQUIRREL}
+              size={Ui.Size::Px(30)}/>
+          }/>
       </Ui.Card>
 
       <Ui.Card minWidth={Ui.Size::Px(200)}>
-        <Ui.Icon icon={Ui.Icons:STAR} size={Ui.Size::Px(30)} />
         <Ui.Card.Container
           subtitle=<{ "Full compo, enchant, etc" }>
           title=<{ "Etre optimiser" }>
-          />
+          image={
+            <Ui.Icon
+              icon={Ui.Icons:STAR}
+              size={Ui.Size::Px(30)}/>
+          }/>
       </Ui.Card>
+
     </Ui.Container>
   }
 
@@ -263,62 +295,57 @@ component Pages.GuildCharter {
 
       <h2>"Bienvenue chez Supernøva !"</h2>
 
-      <p>
-        "
+      <p>"
           Merci d'avoir choisi de rejoindre notre guilde de vétéran du jeu !
           La guilde a pour ambition de clean tout le contenu disponible chaque semaine dans une ambiance détendue mais pas dilettante.
           La priorité est donnée à l'exécution des stratégies et à la qualité des downs (0 morts).
           Si ces objectifs sont atteints de façon constante nous nous essaierons au speedrun.
-        "
-      </p>
+        "</p>
 
       <Ui.Tabs
         size={Ui.Size::Px(16)}
         active={chartTab}
         breakpoint={1000}
-        onChange={
-          (tab : String) { next { chartTab = tab } }
-        }
+        onChange={(tab : String) { next { chartTab = tab } }}
         items=[
           {
             iconBefore = Ui.Icons:PERSON,
-            iconAfter  = <></>,
+            iconAfter = <></>,
             content = content(newCrewmate),
             label = "Nouvelles recrues",
             key = "new_crewmate"
           },
           {
             iconBefore = Ui.Icons:ALERT,
-            iconAfter  = <></>,
+            iconAfter = <></>,
             content = content(comportement),
             label = "Comportement",
             key = "comportement"
           },
           {
             iconBefore = Ui.Icons:WORKFLOW,
-            iconAfter  = <></>,
+            iconAfter = <></>,
             content = content(ranks),
             label = "Les grades",
             key = "ranks"
           },
           {
             iconBefore = Ui.Icons:BRIEFCASE,
-            iconAfter  = <></>,
+            iconAfter = <></>,
             content = content(guildEngagement),
             label = "La guilde s'engage",
             key = "guild_engagement"
           },
           {
             iconBefore = Ui.Icons:ORGANIZATION,
-            iconAfter  = <></>,
+            iconAfter = <></>,
             content = content(memberEngagement),
             label = "Le membre s'engage",
             key = "member_engagement"
-          },
-        ]
-      />
+          }
+        ]/>
 
-      <br />
+      <br/>
 
       <Ui.Button
         iconBefore={Ui.Icons:ARROW_RIGHT}
@@ -327,8 +354,7 @@ component Pages.GuildCharter {
         disabled={false}
         ellipsis={true}
         label="Nous rejoindre"
-        type="primary"
-      />
+        type="primary"/>
     </Ui.Content>
   }
 }

@@ -4,5 +4,4 @@ store Application {
   fun setPage (page : Page) : Promise(Never, Void) {
     next { page = page }
   }
-
 }

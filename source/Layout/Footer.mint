@@ -9,9 +9,9 @@ component Footer {
 
   get navItems {
     [
-      { "Site", [NavItems:HOME, NavItems:GUILD_CHARTER] },
-      { "Communaute", [NavItems:DISCORD] },
-      { "Source", [NavItems:REPOSITORY] }
+      {"Site", [NavItems:HOME, NavItems:GUILD_CHARTER]},
+      {"Communaute", [NavItems:DISCORD]},
+      {"Source", [NavItems:REPOSITORY]}
     ]
   }
 
@@ -19,13 +19,14 @@ component Footer {
     <div::infos>
       <Logo size={Ui.Size::Em(2)}/>
 
-      <p>
-        "Site internet de Supernøva, guilde World of Warcraft Classic - Amnennar."
-      </p>
+      <p>"Site internet de Supernøva, guilde World of Warcraft Classic - Amnennar."</p>
 
       <div::copyright>
-        "Copyright © #{Time.year(Time.now())} Supernøva, " \
-        "All rights reserved."
+        <p>
+        <{ "Copyright © #{Time.year(Time.now())}" }>
+        <Ui.NavItem item={NavItems:LAIRAN}/>
+        <{ "All rights reserved." }>
+        </p>
       </div>
     </div>
   }
@@ -34,7 +35,6 @@ component Footer {
     <Ui.Footer
       categoryWhiteSpace="nowrap"
       navitems={navItems}
-      infos={infos}
-    />
+      infos={infos}/>
   }
 }

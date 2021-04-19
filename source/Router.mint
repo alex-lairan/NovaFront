@@ -6,4 +6,8 @@ routes {
   /charter {
     Application.setPage(Page::GuildCharter)
   }
+
+  /contributions {
+    Application.setPage(Page::Contributions.Index)
+  }
 }

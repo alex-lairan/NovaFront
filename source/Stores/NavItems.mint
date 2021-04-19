@@ -7,7 +7,6 @@ store NavItems {
       target = "",
       href = "/")
 
-
   const GUILD_CHARTER =
     Ui.NavItem::Link(
       iconBefore = Ui.Icons:BOOK,
@@ -28,7 +27,15 @@ store NavItems {
     Ui.NavItem::Link(
       iconBefore = Ui.Icons:REPO,
       iconAfter = <></>,
-      href = "https://github.com/alex-lairan/GoldivoreFront",
+      href = "https://github.com/alex-lairan/NovaFront",
       target = "_blank",
       label = "Source")
+
+  const LAIRAN =
+    Ui.NavItem::Link(
+      iconBefore = <></>,
+      iconAfter = <></>,
+      href = "https://github.com/alex-lairan",
+      target = "_blank",
+      label = "Alexandre Lairan")
 }

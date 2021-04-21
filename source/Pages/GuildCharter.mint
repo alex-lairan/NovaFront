@@ -151,107 +151,87 @@ component Pages.GuildCharter {
   }
 
   get guildEngagement : Html {
-    <>
-      <Ui.Container
-        orientation="horizontal"
-        gap={Ui.Size::Px(20)}
-        justify="space-evenly"
-        align="top">
+    <Ui.Grid gap={Ui.Size::Px(40)}>
+      <Ui.Card minWidth={Ui.Size::Px(200)}>
+        <Ui.Card.Container
+          subtitle=<{ "respect de chacun, tolérance 0 aux dramas / insultes de tous types" }>
+          title=<{ "Sérénité de ses membres" }>
+          image={
+            <Ui.Icon
+              icon={Ui.Icons:MOON}
+              size={Ui.Size::Px(30)}/>
+          }/>
+      </Ui.Card>
 
-        <Ui.Card minWidth={Ui.Size::Px(200)}>
-          <Ui.Card.Container
-            subtitle=<{ "respect de chacun, tolérance 0 aux dramas / insultes de tous types" }>
-            title=<{ "Sérénité de ses membres" }>
-            image={
-              <Ui.Icon
-                icon={Ui.Icons:MOON}
-                size={Ui.Size::Px(30)}/>
-            }/>
-        </Ui.Card>
+      <Ui.Card minWidth={Ui.Size::Px(200)}>
+        <Ui.Card.Container
+          subtitle=<{ "vous trouverez toujours quelqu’un à qui parler si vous en ressentez le besoin" }>
+          title=<{ "Disponibilité pour ses membres" }>
+          image={
+            <Ui.Icon
+              icon={Ui.Icons:LINK}
+              size={Ui.Size::Px(30)}/>
+          }/>
+      </Ui.Card>
 
-        <Ui.Card minWidth={Ui.Size::Px(200)}>
-          <Ui.Card.Container
-            subtitle=<{ "vous trouverez toujours quelqu’un à qui parler si vous en ressentez le besoin" }>
-            title=<{ "Disponibilité pour ses membres" }>
-            image={
-              <Ui.Icon
-                icon={Ui.Icons:LINK}
-                size={Ui.Size::Px(30)}/>
-            }/>
-        </Ui.Card>
+      <Ui.Card minWidth={Ui.Size::Px(200)}>
+        <Ui.Card.Container
+          subtitle=<{ "" }>
+          title=<{ "Favoriser ses membres aux détriments des pickups" }>
+          image={
+            <Ui.Icon
+              icon={Ui.Icons:BROADCAST}
+              size={Ui.Size::Px(30)}/>
+          }/>
+      </Ui.Card>
 
-        <Ui.Card minWidth={Ui.Size::Px(200)}>
-          <Ui.Card.Container
-            subtitle=<{ "" }>
-            title=<{ "Favoriser ses membres aux détriments des pickups" }>
-            image={
-              <Ui.Icon
-                icon={Ui.Icons:BROADCAST}
-                size={Ui.Size::Px(30)}/>
-            }/>
-        </Ui.Card>
+      <Ui.Card minWidth={Ui.Size::Px(200)}>
+        <Ui.Card.Container
+          subtitle=<{ "Maîtrise de l’event, strat préparée en amont, placement, attrib etc" }>
+          title=<{ "Fournir un encadrement sérieux pour les raids" }>
+          image={
+            <Ui.Icon
+              icon={Ui.Icons:BRIEFCASE}
+              size={Ui.Size::Px(30)}/>
+          }/>
+      </Ui.Card>
 
-        <Ui.Card minWidth={Ui.Size::Px(200)}>
-          <Ui.Card.Container
-            subtitle=<{ "Maîtrise de l’event, strat préparée en amont, placement, attrib etc" }>
-            title=<{ "Fournir un encadrement sérieux pour les raids" }>
-            image={
-              <Ui.Icon
-                icon={Ui.Icons:BRIEFCASE}
-                size={Ui.Size::Px(30)}/>
-            }/>
-        </Ui.Card>
+      <Ui.Card minWidth={Ui.Size::Px(200)}>
+        <Ui.Card.Container
+          subtitle=<{ "N'allez pas payer vos compo venez voir vos officiers pour ça" }>
+          title=<{ "OFFRIR VOS ENCHANTEMENTS & GEMMES PVE" }>
+          image={
+            <Ui.Icon
+              icon={Ui.Icons:RUBY}
+              size={Ui.Size::Px(30)}/>
+          }/>
+      </Ui.Card>
 
-      </Ui.Container>
+      <Ui.Card minWidth={Ui.Size::Px(200)}>
+        <Ui.Card.Container
+          title=<{ "Des discounts sur certains objets farm par la guilde vendu à l'hv" }>
+          image={
+            <Ui.Icon
+              icon={Ui.Icons:WATCH}
+              size={Ui.Size::Px(30)}/>
+          }/>
+      </Ui.Card>
 
-      <Ui.Container
-        orientation="horizontal"
-        gap={Ui.Size::Px(20)}
-        justify="space-evenly"
-        align="top">
-
-        <Ui.Card minWidth={Ui.Size::Px(200)}>
-          <Ui.Card.Container
-            subtitle=<{ "N'allez pas payer vos compo venez voir vos officiers pour ça" }>
-            title=<{ "OFFRIR VOS ENCHANTEMENTS & GEMMES PVE" }>
-            image={
-              <Ui.Icon
-                icon={Ui.Icons:RUBY}
-                size={Ui.Size::Px(30)}/>
-            }/>
-        </Ui.Card>
-
-        <Ui.Card minWidth={Ui.Size::Px(200)}>
-          <Ui.Card.Container
-            title=<{ "Des discounts sur certains objets farm par la guilde vendu à l'hv" }>
-            image={
-              <Ui.Icon
-                icon={Ui.Icons:WATCH}
-                size={Ui.Size::Px(30)}/>
-            }/>
-        </Ui.Card>
-
-        <Ui.Card minWidth={Ui.Size::Px(200)}>
-          <Ui.Card.Container
-            subtitle=<{ "CERTAINS consommables de raid fournis, stuff résistance, somme allouée aux réparations" }>
-            title=<{ "Des avantages spécifiques " }>
-            image={
-              <Ui.Icon
-                icon={Ui.Icons:GIFT}
-                size={Ui.Size::Px(30)}/>
-            }/>
-        </Ui.Card>
-
-      </Ui.Container>
-    </>
+      <Ui.Card minWidth={Ui.Size::Px(200)}>
+        <Ui.Card.Container
+          subtitle=<{ "CERTAINS consommables de raid fournis, stuff résistance, somme allouée aux réparations" }>
+          title=<{ "Des avantages spécifiques " }>
+          image={
+            <Ui.Icon
+              icon={Ui.Icons:GIFT}
+              size={Ui.Size::Px(30)}/>
+          }/>
+      </Ui.Card>
+    </Ui.Grid>
   }
 
   get memberEngagement : Html {
-    <Ui.Container
-      orientation="horizontal"
-      gap={Ui.Size::Px(20)}
-      justify="space-evenly"
-      align="center">
+    <Ui.Grid>
 
       <Ui.Card minWidth={Ui.Size::Px(200)}>
         <Ui.Card.Container
@@ -286,7 +266,7 @@ component Pages.GuildCharter {
           }/>
       </Ui.Card>
 
-    </Ui.Container>
+    </Ui.Grid>
   }
 
   fun render : Html {

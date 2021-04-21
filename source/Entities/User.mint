@@ -1,4 +1,4 @@
 record User {
-  email : String,
+  username : String,
   isAdmin : Bool
 }

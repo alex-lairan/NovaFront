@@ -58,14 +58,14 @@ store Application {
   }
 
   fun login (user : User) : Promise(Never, Void) {
-    sequence {
+    parallel {
       Storage.Local.set("user", Json.stringify(encode user))
 
       resetStores()
 
       next { user = UserStatus::LoggedIn(user) }
 
-      Window.navigate("/")
+      Window.navigate("/home")
     } catch Storage.Error => error {
       Promise.never()
     }

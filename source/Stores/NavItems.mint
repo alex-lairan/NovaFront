@@ -30,7 +30,7 @@ store NavItems {
       label = "Deconnection",
       action =
         (event : Html.Event) {
-          sequence {
+          parallel {
             Ui.Notifications.notifyDefault(<{ "Au revoir ! 👋" }>)
             Application.logout()
           }

@@ -1,25 +1,23 @@
 component Login {
   state errors : Map(String, Array(String)) = Map.empty()
   state password : String = ""
-  state email : String = ""
+  state username : String = ""
 
   fun submit (event : Html.Event) {
     sequence {
       errors =
         Validation.merge(
           [
-            Validation.isNotBlank(email, {"email", "Please enter the email address."}),
-            Validation.isValidEmail(email, {"email", "Please enter a valid email address."}),
-            Validation.isNotBlank(password, {"password", "Please enter the password."})
+            Validation.isNotBlank(username, {"username", "Entrez le pseudo."}),
+            Validation.isNotBlank(password, {"password", "Entrez un mot de passe."})
           ])
 
       next { errors = errors }
 
       if (Map.isEmpty(errors)) {
         parallel {
-          Ui.Notifications.notifyDefault(<{ "Bonjour #{email} 👋" }>)
-          Application.login(User(email, true))
-          Window.navigate("/")
+          Ui.Notifications.notifyDefault(<{ "Bonjour #{username} 👋" }>)
+          Application.login(User(username, true))
         }
       } else {
         next {  }
@@ -41,21 +39,21 @@ component Login {
             align="stretch">
 
             <Ui.Field
-              error={Validation.getFirstError("email", errors)}
-              label="Email *">
+              error={Validation.getFirstError("username", errors)}
+              label="Pseudo">
 
               <Ui.Input
-                onChange={(value : String) { next { email = value } }}
-                invalid={Map.has("email", errors)}
+                onChange={(value : String) { next { username = value } }}
+                invalid={Map.has("username", errors)}
                 placeholder="john@doe.com"
-                value={email}
-                type="email"/>
+                value={username}
+                type="text"/>
 
             </Ui.Field>
 
             <Ui.Field
               error={Validation.getFirstError("password", errors)}
-              label="Password *">
+              label="Mot de passe">
 
               <Ui.Input
                 onChange={(value : String) { next { password = value } }}
@@ -69,7 +67,7 @@ component Login {
             <Ui.Button
               iconAfter={Ui.Icons:ARROW_RIGHT}
               onClick={submit}
-              label="Continue"/>
+              label="Continuer"/>
 
           </Ui.Container>
         </Ui.Box>

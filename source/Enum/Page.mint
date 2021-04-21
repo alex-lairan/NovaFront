@@ -1,6 +1,7 @@
 enum Page {
   Initial
   Home
+  HomeLogged
 
   GuildCharter
 

@@ -1,6 +1,29 @@
 routes {
   / {
-    Application.initializeWithPage(Page::Home)
+    sequence {
+      Application.initialize()
+
+      case (Debug.log(Application.user)) {
+        UserStatus::LoggedOut =>
+          Application.setPage(Page::Home)
+        UserStatus::LoggedIn user =>
+          Application.setPage(Page::HomeLogged)
+      }
+    }
+  }
+
+  /home {
+    sequence {
+      Application.initialize()
+      Api.Contributors.load()
+
+      case (Application.user) {
+        UserStatus::LoggedOut =>
+          Application.setPage(Page::NotFound)
+        UserStatus::LoggedIn user =>
+          Application.setPage(Page::HomeLogged)
+      }
+    }
   }
 
   /charter {
@@ -10,6 +33,7 @@ routes {
   /contributors {
     sequence {
       Application.initialize()
+      Api.Contributors.load()
 
       case (Application.user) {
         UserStatus::LoggedOut =>

@@ -11,6 +11,7 @@ component Main {
     case (page) {
       Page::Initial => <{  }>
       Page::Home => <Pages.Home />
+      Page::HomeLogged => <Pages.HomeLogged />
       Page::GuildCharter => <Pages.GuildCharter/>
       Page::Contributors.Index => <Pages.Contributors.Index/>
       Page::Contributors.Show => <Pages.Contributors.Show/>
